@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Tareas Pro</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">TaskMaster IT</div>
+        <div class="nav-links">
+            <span>Gestor de tareas 2026</span>
+        </div>
+    </nav>
+
+    <main>
+        <section id="seccion-formulario">
+            <form id="formulario-tarea">
+                <div class="form-grid">
+                    <input type="text" id="titulo-tarea" placeholder="¿Qué tarea tienes pendiente?" required>
+                    <textarea id="descripcion-tarea" placeholder="Añade una descripción opcional..." rows="2"></textarea>
+                    
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label>Prioridad:</label>
+                            <select id="prioridad-tarea">
+                                <option value="alta">Alta</option>
+                                <option value="media" selected>Media</option>
+                                <option value="baja">Baja</option>
+                            </select>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label>Fecha Límite:</label>
+                            <input type="date" id="fecha-tarea" required>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" id="btn-agregar">Guardar Tarea</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="kanban">
+            <div class="columna" id="col-alta">
+                <h3> Prioridad Alta</h3>
+                <div class="lista-tareas"></div>
+            </div>
+
+            <div class="columna" id="col-media">
+                <h3>Prioridad Media</h3>
+                <div class="lista-tareas"></div>
+            </div>
+
+            <div class="columna" id="col-baja">
+                <h3> Prioridad Baja</h3>
+                <div class="lista-tareas"></div>
+            </div>
+        </section>
+    </main>
+<footer>
+        <div class="footer-content">
+            <p>&copy; 2026 TaskMaster IT - Tec informatica</p>
+            <p>Desarrollado con asistencia de IA</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

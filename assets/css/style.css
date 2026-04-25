@@ -1,0 +1,184 @@
+/* 3.1 VARIABLES CSS */
+:root {
+    --color-primario: #2563eb;
+    --color-secundario: #7c3aed;
+    --color-pendiente: #ef4444; /* Rojo para Alta */
+    --color-progreso: #f59e0b;   /* Naranja para Media */
+    --color-completado: #10b981; /* Verde para Baja */
+     
+    --fuente-principal: 'Segoe UI', system-ui, sans-serif;
+    --espacio-lg: 2rem;
+    --sombra: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --radio: 12px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--fuente-principal);
+    background-color: #f8fafc;
+    color: #1e293b;
+    padding-top: 80px; /* Espacio para navbar fija */
+}
+
+/* NAVBAR */
+nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 65px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10%; /* Margen del 10% */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    z-index: 1000;
+}
+
+nav .logo {
+    font-weight: 800;
+    color: var(--color-primario);
+    font-size: 1.4rem;
+}
+
+/* CONTENEDOR PRINCIPAL */
+main {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: var(--espacio-lg) 10%; /* Margen del 10% */
+}
+
+/* FORMULARIO */
+form {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    margin-bottom: var(--espacio-lg);
+    border-top: 4px solid var(--color-primario);
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.input-group {
+    flex: 1;
+}
+
+label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-family: inherit;
+}
+
+button {
+    width: 100%;
+    background: var(--color-primario);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+button:hover {
+    background: var(--color-secundario);
+    transform: translateY(-2px);
+}
+
+/* KANBAN */
+.kanban {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+@media (min-width: 768px) { .kanban { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1100px) { .kanban { grid-template-columns: repeat(3, 1fr); } }
+
+.columna {
+    background: #f1f5f9;
+    padding: 15px;
+    border-radius: var(--radio);
+    min-height: 400px;
+}
+
+.columna h3 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #64748b;
+}
+
+/* TARJETAS DE TAREA */
+.tarea {
+    background: white;
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    box-shadow: var(--sombra);
+}
+
+.tarea h4 { margin-bottom: 5px; }
+.tarea p { font-size: 0.9rem; color: #475569; }
+
+.fecha-tag {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.75rem;
+    background: #f1f5f9;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+/* COLORES DE PRIORIDAD */
+.tarea.alta { border-left: 5px solid var(--color-pendiente); }
+.tarea.media { border-left: 5px solid var(--color-progreso); }
+.tarea.baja { border-left: 5px solid var(--color-completado); }
+/* ESTILOS DEL FOOTER */
+footer {
+    background-color: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    padding: 30px 10%; /* Mismo margen del 10% que el resto */
+    margin-top: 40px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+footer p {
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+/* Para que el footer se vea bien en pantallas pequeñas */
+@media (min-width: 768px) {
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
